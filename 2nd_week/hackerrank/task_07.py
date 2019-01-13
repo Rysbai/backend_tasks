@@ -2,7 +2,6 @@
 #TASK
 # Read an integer N.
 # Without using any string methods, try to print the following:
-# Note that "" represents the values in between.
 #input >>>3
 #output >>>123
 

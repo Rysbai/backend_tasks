@@ -1,6 +1,6 @@
 
 # Task 
-# Read an integer . For all non-negative integers , print . See the sample for details.
+# Read an integer n. For all non-negative integers i, print i**2. See the sample for details.
 
 
 if __name__ == '__main__':
