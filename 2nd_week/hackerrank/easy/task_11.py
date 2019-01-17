@@ -16,30 +16,30 @@
 
 
 quantity = int(input())
-setA = set(input().split(" "))
+set_a = set(input().split(" "))
 
 N = int(input())
 
 for i in range(1, N+1):
     operation_and_number = list(input().split(" "))
-    setN = set(input().split(" "))
+    set_n = set(input().split(" "))
 
     if operation_and_number[0] == "update":
-        setA.update(setN)
+        set_a.update(set_n)
 
     if operation_and_number[0] == "intersection_update":
-        setA.intersection_update(setN)
+        set_a.intersection_update(set_n)
 
     if operation_and_number[0] == "difference_update":
-        setA.difference_update(setN)
+        set_a.difference_update(set_n)
 
     if operation_and_number[0] == "symmetric_difference_update":
-        setA.symmetric_difference_update(setN)
+        set_a.symmetric_difference_update(set_n)
 
 
-sumA = 0
+sum_a = 0
 
-for i in setA:
-    sumA += int(i)
+for i in set_a:
+    sum_a += int(i)
 
-print(sumA)
+print(sum_a)
