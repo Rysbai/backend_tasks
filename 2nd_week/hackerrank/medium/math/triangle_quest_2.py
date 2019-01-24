@@ -11,7 +11,7 @@
 # 123454321
 
 for i in range(1,int(input())+1): 
-    print()
+    print(sum(10**power for power in range(i-1, -1, -1))**2)
 
 # 
 
