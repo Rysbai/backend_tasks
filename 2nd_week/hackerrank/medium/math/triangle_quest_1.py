@@ -8,16 +8,16 @@
 # 4444
 # 55555
 
+# Can you do it using only arithmetic operations, 
+# a single for loop and print statement?
 
+# Use no more than two lines. The first line (the for statement) is 
+# already written for you. You have to complete the print statement.
+
+
+import functools
 for i in range(1,int(input())): 
-    print(list(i*(10**power) for power in range(i-1, 0, -1)))
+    print(functools.reduce(lambda a, b: a + b, 
+                            list(i*(10**power) for power in range(i-1, -1, -1))))
 
-
-# My output: 
-
-# []
-# [20]
-# [300, 30]
-# [4000, 400, 40]
-
-# Пока что так
+# Я не смог делать с одной строкой
