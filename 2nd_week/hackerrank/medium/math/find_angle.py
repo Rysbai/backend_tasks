@@ -3,7 +3,7 @@
 # https://www.hackerrank.com/challenges/find-angle/problem
 
 import math
-AB = int(input())
-BC = int(input())
+AB = float(input())
+BC = float(input())
 
-midlpoint = (math.sqrt(AB**2 + BC**2)) / 2
+print(str(int(round(math.degrees(math.atan2(AB, BC)))))+'°')
