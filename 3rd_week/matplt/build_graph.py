@@ -1,11 +1,13 @@
 import pygal 
 import openpyxl
 
-wb = openpyxl.load_workbook('example.xlsx')
+filename = 'example.xlsx'
+
+wb = openpyxl.load_workbook(filename)
 sheets = wb.get_sheet_names()
+
 for sh in sheets:
     sheet =  wb.get_sheet_by_name(sh)
-    print(sheet)
     x_labels = [sheet.cell(row=1, column=i).value for i in range(2, sheet.max_column + 1)]
     time = [sheet.cell(row=i, column=1).value for i in range(2, sheet.max_row + 1)]
 
@@ -14,7 +16,6 @@ for sh in sheets:
         column = [sheet.cell(row=i, column=col).value for i in range(2, sheet.max_row + 1)]
         columns.append(column)
 
-    print(columns)
     hist = pygal.Bar()
     hist.title = sheet.title
     hist.x_labels = time
