@@ -3,7 +3,7 @@
 # https://www.hackerrank.com/challenges/find-angle/problem
 
 import math
-AB = float(input())
-BC = float(input())
+a = float(input())
+b = float(input())
 
-print(str(int(round(math.degrees(math.atan2(AB, BC)))))+'°')
+print(str(int(round(math.degrees(math.atan2(a, b)))))+'°')

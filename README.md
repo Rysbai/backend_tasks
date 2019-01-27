@@ -1,1 +1,4 @@
-My hackerrank profile: https://www.hackerrank.com/rysbai?hr_r=1
+В этой репозитории находятся мои задания по стади плану NEOBIS BACKEND,
+а также другие работы сделанные в паралеле(кроме клиент тестов).
+
+Мой hackerrank профиль: https://www.hackerrank.com/rysbai?hr_r=1
