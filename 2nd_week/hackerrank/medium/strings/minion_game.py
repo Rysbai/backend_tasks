@@ -16,62 +16,23 @@
 # https://www.hackerrank.com/challenges/the-minion-game/problem
 
 
-import re
-
-def minion_game(string):
-    pattern = ['A', 'E', 'I', 'O', 'U']
+def minion_game(s):
+    vowels = 'AEIOU'
 
     kevin_score = 0
     stuart_score = 0
-    kevin_words = []
-    stuart_words = []
-
-    letter_index = 0
-    for letter in string:
-        if letter in pattern:
-            if letter not in kevin_words:
-                kevin_words.append(letter)
-                
-            ltr_index = 2
-            for i in range(len(string) - letter_index):
-                if ltr_index > len(string):
-                    pass
-                else: 
-                    word = string[letter_index: letter_index+ltr_index]
-                    if word not in kevin_words:
-                        kevin_words.append(word)
-
-                ltr_index += 1
+    for i in range(len(s)):
+        if s[i] in vowels:
+            kevin_score += (len(s)-i)
         else:
-            if letter not in stuart_words:
-                stuart_words.append(letter)
-
-            ltr_index = 2
-            for i in range(len(string) - letter_index):
-                if ltr_index > len(string):
-                    pass
-                else:
-                    word = string[letter_index: letter_index+ltr_index]
-                    if word not in stuart_words:
-                        stuart_words.append(word)
-
-                ltr_index += 1
-
-        letter_index += 1
-
-    for word in kevin_words:
-        kevin_score += len(re.findall(word, string))
-
-    for word in stuart_words:
-        stuart_score += len(re.findall(word, string))
-
+            stuart_score += (len(s)-i)
 
     if kevin_score > stuart_score:
-        print("Kevin " + str(kevin_score))
-
-    if stuart_score > kevin_score:
-        print("Stuart " + str(stuart_score))
-
+        print("Kevin", kevin_score)
+    elif kevin_score < stuart_score:
+        print("Stuart", stuart_score)
+    else:
+        print("Draw")
 
 if __name__ == '__main__':
     s = input()

@@ -12,9 +12,11 @@
 # character in string ui.
 # Given s and k, print n/k lines where each line i denotes string ui.
 
+# https://www.hackerrank.com/challenges/merge-the-tools/problem
+
 
 def merge_the_tools(string, k):
-    len_k = len(string) / k
+    len_k = int(len(string) / k)
     letter_index = 0
 
     for i in range(1, len_k+1):
@@ -29,5 +31,5 @@ def merge_the_tools(string, k):
         letter_index += k
 
 if __name__ == '__main__':
-    string, k = raw_input(), int(raw_input())
+    string, k = input(), int(input())
     merge_the_tools(string, k)
