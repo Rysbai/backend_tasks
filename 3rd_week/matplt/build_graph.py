@@ -1,7 +1,7 @@
 import pygal 
 import openpyxl
 
-filename = 'example.xlsx'
+filename = 'data.xlsx'
 
 wb = openpyxl.load_workbook(filename)
 sheets = wb.get_sheet_names()
@@ -18,6 +18,7 @@ for sh in sheets:
 
     hist = pygal.Bar()
     hist.title = sheet.title
+    hist.x_title = "Өлчөө убактысы"
     hist.x_labels = time
 
     for i in range(len(columns)):
