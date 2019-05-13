@@ -10,18 +10,18 @@ index = 1
 for sh in sheets:
     sheet =  wb.get_sheet_by_name(sh)
 
-    for row in range(2, sheet.max_row + 1):
-        x_labels = [sheet.cell(row=1, column=i).value for i in range(2, sheet.max_column + 1)]
-        y_labels = [sheet.cell(row=row, column=i).value for i in range(2, sheet.max_column + 1)]
-        time = sheet.cell(row=row, column=1).value
+    x_labels = [sheet.cell(row=i, column=1).value for i in range(1, sheet.max_row + 1)]
+    y_labels = [sheet.cell(row=i, column=2).value for i in range(1, sheet.max_row + 1)]
 
-        hist = pygal.HorizontalBar()
-        hist.title = sheet.title
-        hist.x_title = 'Өлчөө убактысы: ' + time
-        hist.x_labels = x_labels
+    y_labels = [int(i)/int(sheet.cell(row=1, column=3).value) for i in y_labels]
+    print(y_labels)
 
-        hist.add('(мг/м3)', y_labels)
-        file_name = str(index) + '_graph'
 
-        hist.render_to_png('graphs/{}.png'.format(file_name))
-        index += 1
+    hist = pygal.Bar()
+    hist.title = sheet.title
+    hist.x_title = 'xi < x < xi+1'
+    hist.x_labels = x_labels
+    hist.add('n/h', y_labels)
+    file_name = str(index) + '_graph'
+    hist.render_to_png('math/{}.png'.format(file_name))
+    index += 1
